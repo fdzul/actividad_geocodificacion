@@ -1,0 +1,24 @@
+---
+title: "Geocodificación de las bases de datos de los casos de dengue"
+subtitle: Felipe Antonio Dzul Manzanilla
+format: 
+  html:
+      theme: flatly
+      code-fold: true
+      toc: true
+      number-sections: true
+title-block-banner: true
+editor: visual
+execute:
+  freeze: auto
+---
+
+## Introdución
+
+La geocodificación en salud pública es el proceso de convertir los domicilios de residencia de los eventos de salud (casos de alguna enfermedad) en coordenadas geograficas no proyectadas como la latitud y la longitud. Para realizar este proceso Google ofrece el servicio de la geocodificación a través de una clave API ([API de Geocoding](https://developers.google.com/maps/documentation/geocoding/overview?hl=es-419)). 
+
+## Objetivos
+
+Determinar la distribución de mosquitos con importancia en Salud Pública de México.
+
+## Material y Métodos
