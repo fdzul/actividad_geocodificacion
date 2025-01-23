@@ -23,19 +23,21 @@ Describir brevemente la actividad de la geocodificación de las bases de datos d
 
 ## Material y Métodos
 
-Semanalmente, la base de datos de casos de dengue es accesada en el modulo de vectores del Sistena Nacional de Vigilancia Epidemiológica de la Dirección General de Epidemiologia de la Secretaria de Salud Federal.
+Semanalmente, la base de datos de casos de dengue es accesada en el modulo de vectores del Sistena Nacional de Vigilancia Epidemiológica de la Dirección General de Epidemiología de la Secretaría de Salud Federal.
 
 La base es cargada en R & Rstudio con la finalidad de convertir las direcciones físicas de los domicilios de los casos probables y confirmados de dengue.
 
-La base es almacenada y actualizada semanalmente en un archivo RData en una maquina local (la información nunca se sube) y los archivos sensibles unicamente es manejado por el Dr. Felipe Antonio Dzul Manzanilla.
+La base es almacenada y actualizada semanalmente en un archivo RData en una maquina local (la información nunca se sube a la nube) y los archivos sensibles únicamente es manejado por el Dr. Felipe Antonio Dzul Manzanilla.
 
-Asi mismo la base de los casos geocodificados proporcionados en un archivo encriptado y es proporcionado con la finalidad de comprobar la actividad a Consejo Nacional de Humanidades, Ciencia y Tecnología (CONAHCYT).
+Asi mismo, la base de los casos geocodificados son proporcionados en un archivo encriptado con la finalidad de comprobar la actividad al Consejo Nacional de Humanidades, Ciencia y Tecnología (CONAHCYT).
 
 Sin la base de casos de dengue geocodificados, no se podría análizar espacialmente, el hecho de agregarle a la base los datos de las coordenadas geográficas permite convertir la base de datos en una base de datos espaciales. Esta transformación permite realizar diferentes operaciones geográficas a la base espacial y adquiere propiedades para poderle hacer análisis espaciales.
 
-La serie temporal analizada incluye desde el 2008 al 2024. Dada la naturaleza de la frecuencia de reporte semanal y el hecho que en país es endémico para la enfermedad, las bases de datos se actualizan semanal para identificar las transmisión activa y al final del año se actualizan para la identificación de la transmisión persistente atraves de los hotspots.
+La serie temporal analizada incluye desde el 2008 al 2024. Dada la naturaleza de la frecuencia de reporte semanal y el hecho que en país es endémico para la enfermedad, las bases de datos se actualizan de manera semanal para identificar las transmisión activa y al final del año se actualizan para la identificación de la transmisión persistente a través de los hotspots.
 
-## Material y Métodos
+Finalmente se proporcionan, las facturas cobradas por google por el servicio de ([API de Geocoding](https://developers.google.com/maps/documentation/geocoding/overview?hl=es-419)).
+
+## Resultados
 
 Las bases de datos geocodificados incluye 95611 registros de casos confirmados y los grupos de edad incluidos son menores de 12 años y mayores de 65 años. Las variables de la base son año, longitud y latitud.En la tabla 1 se muestras los casos geocodificados por año y en la figura 1 se proporciona la distribución de los casos geocodificados.
 
@@ -71,3 +73,25 @@ mapview::mapview(x,
                  zcol = "ANO",
                  layer.name = "Año")
 ```
+
+
+
+## Base de datos encriptada
+
+
+## Facturas de Google
+
+![Febrero](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/4931583819_feb.pdf)
+![Marzo](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/4953415316_mar.pdf)
+![Abril](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/4970785666_abril.pdf)
+![Mayo](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/4996890555_may.pdf)
+![Junio](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/5018708593_junio.pdf)
+![Julio](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/5040218016_julio.pdf)
+![Agosto](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/5063183321_agosto.pdf)
+![Septiembre](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/5085416413_sep.pdf)
+![Octubre](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/5101855606_oct.pdf)
+![Noviembre](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/5130079396_nov.pdf)
+![Diciembre](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/5153314931_dic.pdf)
+
+
+
