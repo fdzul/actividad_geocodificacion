@@ -75,9 +75,11 @@ mapview::mapview(x,
 ```
 
 
-
 ## Base de datos encriptada
 
+La base de datos encriptada puede accesarse en el siguiente:
+
+[Base de datos encriptada de casos de dengue geocodificados](https://github.com/fdzul/actividad_geocodificacion/blob/main/8.RData/dengue_geocoded_dataset.RData)
 
 ## Facturas de Google
 
