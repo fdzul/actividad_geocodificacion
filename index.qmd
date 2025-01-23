@@ -15,10 +15,59 @@ execute:
 
 ## Introdución
 
-La geocodificación en salud pública es el proceso de convertir los domicilios de residencia de los eventos de salud (casos de alguna enfermedad) en coordenadas geograficas no proyectadas como la latitud y la longitud. Para realizar este proceso Google ofrece el servicio de la geocodificación a través de una clave API ([API de Geocoding](https://developers.google.com/maps/documentation/geocoding/overview?hl=es-419)). 
+La geocodificación en salud pública es el proceso de convertir los domicilios de residencia de los eventos de salud (casos de alguna enfermedad) en coordenadas geográficas no proyectadas como la latitud y la longitud. Para realizar este proceso Google ofrece el servicio de geocodificación a través de una clave API ([API de Geocoding](https://developers.google.com/maps/documentation/geocoding/overview?hl=es-419)).
 
 ## Objetivos
 
-Determinar la distribución de mosquitos con importancia en Salud Pública de México.
+Describir brevemente la actividad de la geocodificación de las bases de datos de los casos de dengue.
 
 ## Material y Métodos
+
+Semanalmente, la base de datos de casos de dengue es accesada en el modulo de vectores del Sistena Nacional de Vigilancia Epidemiológica de la Dirección General de Epidemiologia de la Secretaria de Salud Federal.
+
+La base es cargada en R & Rstudio con la finalidad de convertir las direcciones físicas de los domicilios de los casos probables y confirmados de dengue.
+
+La base es almacenada y actualizada semanalmente en un archivo RData en una maquina local (la información nunca se sube) y los archivos sensibles unicamente es manejado por el Dr. Felipe Antonio Dzul Manzanilla.
+
+Asi mismo la base de los casos geocodificados proporcionados en un archivo encriptado y es proporcionado con la finalidad de comprobar la actividad a Consejo Nacional de Humanidades, Ciencia y Tecnología (CONAHCYT).
+
+Sin la base de casos de dengue geocodificados, no se podría análizar espacialmente, el hecho de agregarle a la base los datos de las coordenadas geográficas permite convertir la base de datos en una base de datos espaciales. Esta transformación permite realizar diferentes operaciones geográficas a la base espacial y adquiere propiedades para poderle hacer análisis espaciales.
+
+La serie temporal analizada incluye desde el 2008 al 2024. Dada la naturaleza de la frecuencia de reporte semanal y el hecho que en país es endémico para la enfermedad, las bases de datos se actualizan semanal para identificar las transmisión activa y al final del año se actualizan para la identificación de la transmisión persistente atraves de los hotspots.
+
+## Material y Métodos
+
+Las bases de datos geocodificados incluye 95611 registros de casos confirmados y los grupos de edad incluidos son menores de 12 años y mayores de 65 años. Las variables de la base son año, longitud y latitud.En la tabla 1 se muestras los casos geocodificados por año y en la figura 1 se proporciona la distribución de los casos geocodificados.
+
+```{r, echo=FALSE}
+load("~/Dropbox/hotspots_2024/8.RData/denmex.RData")
+xy |>
+    skimr::skim()
+
+```
+
+```{r, echo=FALSE}
+load("~/Dropbox/hotspots_2024/8.RData/denmex.RData")
+xy |>
+    dplyr::group_by(ANO) |>
+    dplyr::rename(year = ANO) |>
+    dplyr::summarise(n = dplyr::n(),
+                     longitud = length(unique(long)),
+                     latitud = length(unique(lat)) ) |>
+    gt::gt(caption = "Tabla 1. Casos de Dengue Geocodificados por AÑO")
+
+```
+
+```{r, echo=FALSE, fig.cap="Figura 1. Distribución de los casos de dengue en México por año"}
+load("~/Dropbox/hotspots_2024/8.RData/denmex.RData")
+x <- xy |>
+    sf::st_as_sf(coords = c("long", "lat"),
+                 crs = 4326) |>
+    dplyr::mutate(id = 1:dplyr::n()) |>
+    dplyr::filter(!id %in% c(8008, 2138))
+mex <- rgeomex::AGEE_inegi19_mx
+x <- x[mex, ]
+mapview::mapview(x,
+                 zcol = "ANO",
+                 layer.name = "Año")
+```
