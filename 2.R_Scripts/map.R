@@ -7,6 +7,9 @@ x <- xy |>
     dplyr::filter(!id %in% c(8008, 2138))
 mex <- rgeomex::AGEE_inegi19_mx
 x <- x[mex, ]
-mapview::mapview(x,
+mapview::mapview(x |> dplyr::filter(ANO %in% c(2012, 2013,
+                                               2019,2023, 
+                                               2024)),
                  zcol = "ANO",
-                 layer.name = "Año")
+                 layer.name = "Año",
+                 burst = TRUE)
