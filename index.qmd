@@ -91,11 +91,11 @@ La base de datos encriptada puede accesarse en el siguiente enlace:
 
 ![](factura_junio.png)
 
-[Julio](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/5040218016_julio.pdf)
+[Julio](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/5040218016.pdf)
 
 ![](factura_julio.png)
 
-[Agosto](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/5063183321_agosto.pdf)
+[Agosto](https://github.com/fdzul/actividad_geocodificacion/blob/main/9.facturas_geocodificación/5063183321.pdf)
 
 ![](factura_agosto.png)
 
