@@ -1,6 +1,6 @@
 ---
 title: "Geocodificación de las bases de datos de los casos de dengue"
-subtitle: Felipe Antonio Dzul Manzanilla
+subtitle: Felipe Antonio Dzul Manzanilla | CVU 6172953
 format: 
   html:
       theme: flatly
@@ -77,7 +77,7 @@ mapview::mapview(x,
 
 ## Base de datos encriptada
 
-La base de datos encriptada puede accesarse en el siguiente:
+La base de datos encriptada puede accesarse en el siguiente enlace:
 
 [Base de datos encriptada de casos de dengue geocodificados](https://github.com/fdzul/actividad_geocodificacion/blob/main/8.RData/dengue_geocoded_dataset.RData)
 
